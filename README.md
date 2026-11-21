@@ -71,7 +71,7 @@ Modelo: `dx/dt = v`, `dv/dt = −a(v)`, con x en m, v en m/s y t en s.
 | MAL CONDICIONADO | `a = a₀√v` (raíz doble en t_det) | 5 | 0.5 | no aplica | 0.2 |
 
 - **Referencia analítica:** constante, `t_det = v₀/a`, `d = v₀²/(2a)`; viscosa, `v = (v₀+a/k)e^(−kt) − a/k`; raíz cuadrada, `v = (√v₀ − a₀t/2)²`.
-- **Métodos:** RK2 (variante de Heun) y RK4; bisección, Newton-Raphson y secante sobre `v(t) = 0`; trapecio y Simpson 1/3 sobre la tabla de RK4; Romberg con refinamiento `n = 2^q`.
+- **Métodos:** RK2 (variante de Heun) y RK4; bisección (intervalo [0, 3·t_det]), Newton-Raphson y secante sobre `v(t) = 0`; trapecio y Simpson 1/3 sobre la tabla de RK4; Romberg con refinamiento `n = 2^q`.
 - **Salidas:** tabla temporal frente a la referencia, errores por método, raíces, refinamiento de integración, gráfico de v(t), gráfico de convergencia log-log, sensibilidad (+1 % en v₀ y en a₀) y predicción del sustituto IA.
 - **Mal condicionado:** `v(t)` toca cero sin cambiar de signo, por lo que la bisección no aplica; Newton converge de forma lineal y un residuo pequeño no garantiza una raíz precisa. Es un subexperimento numérico, no una falla física.
 
